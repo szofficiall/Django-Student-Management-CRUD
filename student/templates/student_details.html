@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Student Details
+{% endblock %}
+
+{% block content %}
+  <div class="container py-5">
+    <!-- Page Header -->
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">
+        <i class="bi bi-person-vcard-fill text-primary me-2"></i>
+        Student Details
+      </h2>
+
+      <p class="text-muted mb-0">Here are the complete details of the student.</p>
+    </div>
+
+    <!-- Student Details Card -->
+    <div class="card border-0 shadow-sm mx-auto" style="max-width: 700px;">
+      <div class="card-header bg-primary text-white py-3">
+        <h5 class="mb-0">
+          <i class="bi bi-person-fill me-2"></i>
+          {{ students.name }}
+        </h5>
+      </div>
+
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-borderless align-middle mb-0">
+            <tbody>
+              <!-- ID -->
+              <tr>
+                <th class="text-muted" style="width: 30%;">
+                  <i class="bi bi-hash me-2"></i>
+                  ID
+                </th>
+                <td class="fw-semibold">{{ students.pk }}</td>
+              </tr>
+
+              <!-- Name -->
+              <tr>
+                <th class="text-muted">
+                  <i class="bi bi-person me-2"></i>
+                  Name
+                </th>
+                <td class="fw-semibold">{{ students.name }}</td>
+              </tr>
+
+              <!-- Age -->
+              <tr>
+                <th class="text-muted">
+                  <i class="bi bi-calendar3 me-2"></i>
+                  Age
+                </th>
+                <td>{{ students.age }} years</td>
+              </tr>
+
+              <!-- Email -->
+              <tr>
+                <th class="text-muted">
+                  <i class="bi bi-envelope me-2"></i>
+                  Email
+                </th>
+                <td>
+                  <a href="mailto:{{ student.email }}" class="text-decoration-none">{{ students.email }}</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="card-footer bg-white border-0 d-flex justify-content-between">
+        <a href="{% url 'studentform:read_students' %}" class="btn btn-secondary">
+          <i class="bi bi-arrow-left me-1"></i>
+          Back to Students
+        </a>
+
+        <a href="{% url 'studentform:update_students' students.pk %}" class="btn btn-warning">
+          <i class="bi bi-pencil me-1"></i>
+          Update Student
+        </a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

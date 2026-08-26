@@ -1,0 +1,60 @@
+<footer class="bg-dark text-white py-4 mt-auto">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- About -->
+      <div class="col-md-6 mb-3 mb-md-0">
+        <h5 class="fw-bold mb-2">
+          <i class="bi bi-mortarboard-fill text-primary me-2"></i>
+          Django Model Form
+        </h5>
+
+        <p class="text-secondary mb-0">A simple Student Management CRUD application built with Django Model Forms and Bootstrap 5.</p>
+      </div>
+
+      <!-- Links -->
+      <div class="col-md-3 mb-3 mb-md-0">
+        <h6 class="fw-bold">Quick Links</h6>
+
+        <a href="{% url 'studentform:read_students' %}" class="text-secondary text-decoration-none d-block mb-1">
+          <i class="bi bi-people me-1"></i>
+          Students
+        </a>
+
+        <a href="{% url 'studentform:create_students' %}" class="text-secondary text-decoration-none d-block">
+          <i class="bi bi-person-plus me-1"></i>
+          Add Student
+        </a>
+      </div>
+
+      <!-- Developer -->
+      <div class="col-md-3">
+        <h6 class="fw-bold">Developer</h6>
+
+        <p class="text-secondary mb-0">
+          <i class="bi bi-code-slash me-1"></i>
+          Sultan Zaib
+        </p>
+      </div>
+    </div>
+
+    <hr class="border-secondary my-3" />
+
+    <div class="text-center">
+      <p class="text-secondary mb-0">
+        © 2026
+        <strong class="text-white">Sultan Zaib</strong>. All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-link {
+    transition: all 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    color: #fff !important;
+    padding-left: 5px;
+  }
+</style>

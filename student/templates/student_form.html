@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Add Student
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+  <div class="row justify-content-center">
+
+    <div class="col-md-8 col-lg-6">
+
+      <!-- Form Card -->
+      <div class="card border-0 shadow-sm">
+
+        <!-- Header -->
+        <div class="card-header bg-primary text-white text-center py-4">
+
+          <div class="mb-2">
+            <i class="bi bi-person-plus-fill"
+               style="font-size: 2.5rem;"></i>
+          </div>
+
+          <h3 class="fw-bold mb-1">
+            Add New Student
+          </h3>
+
+          <p class="mb-0 opacity-75">
+            Enter the student information below
+          </p>
+
+        </div>
+
+        <!-- Form -->
+        <div class="card-body p-4">
+
+          <form method="POST">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <!-- Submit Button -->
+            <div class="d-grid mt-4">
+
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg"
+              >
+                <i class="bi bi-person-plus-fill me-2"></i>
+                Add Student
+              </button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="card-footer bg-white border-0 text-center py-3">
+
+          <a
+            href="{% url 'studentform:read_students' %}"
+            class="text-decoration-none"
+          >
+            <i class="bi bi-people-fill me-1"></i>
+            View Student List
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}
